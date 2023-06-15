@@ -2,25 +2,29 @@ import { Link, useParams } from "react-router-dom";
 import ReactPlayer from "react-player/youtube";
 
 const Course = () => {
+  // grab the correct data
   const courses = JSON.parse(localStorage.getItem("courses"));
   const id = useParams().id;
   const course = courses.find((course) => course.id == id);
   return (
     <div>
+      <nav>
+        <Link to={`/part/${course.id}`}>Sections</Link>
+      </nav>
       <section className="header">
         <Link to={`/`}>&#9001;</Link>
         <h1>Course Detail</h1>
       </section>
       <section className="list">
-        <ReactPlayer url={course.videos.intro} />
+        <ReactPlayer url={course.intro} />
         <h2>{course.name}</h2>
         <ul>
-          <li>{course.description}</li>
-          <li>{course.description}</li>
-          <li>{course.description}</li>
+          {course.bulletPoints.map((point) => (
+            <li>{point}</li>
+          ))}
         </ul>
         <h3>{course.description}</h3>
-        <p>
+        <p style={{ width: "50%" }}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
           ultrices nisl felis, id volutpat nunc pellentesque sit amet.
           Pellentesque ac dui eu quam vehicula maximus quis sed leo. Duis ac

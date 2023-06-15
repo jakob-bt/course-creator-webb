@@ -8,6 +8,7 @@ const Home = () => {
     <div>
       <section className="header">
         <h1>All Courses</h1>
+        {/*gave this an ID, for CSS purposes*/}
         <Link to={`/filter`} id="filterButton">
           Filter
         </Link>
