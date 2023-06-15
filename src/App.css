@@ -1,0 +1,54 @@
+.header {
+    display: flex;
+    justify-content: center;
+    color: green;
+}
+
+.header > h1, .header > p {
+    display: inline-block;
+}
+
+#filterButton {
+    transform: translate(5em, 1.5em);
+}
+
+.header > a {
+    color: green;
+    transform: translate(-2em, 1.5em);
+}
+
+#exit {
+    transform: translate(4em, 1.4em);
+}
+
+.list, .content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.list > img {
+    width: 30%;
+}
+
+.list > button, .content, li {
+    margin-bottom: 1em;
+}
+
+.list > p {
+    width: 50%;
+}
+
+.content {
+    border: 1px solid grey;
+    width: 27%;
+    box-shadow: -3px 3px 3px 3px #f0f0f0;
+}
+
+.content, .content > img {
+    border-radius: 5px;
+}
+
+.content > img {
+    width: 100%;
+}
